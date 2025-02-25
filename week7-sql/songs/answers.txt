@@ -1,0 +1,11 @@
+To categorize user's audio aura I ran queries to average all three danceability,energy and valence
+
+SELECT AVG(danceability) FROM songs; // 0.71646
+SELECT AVG(energy) FROM songs; // 0.65906
+SELECT AVG(valence) FROM songs; // 0.484443
+
+It turns out that danceability has the highest score, energy second and valence
+The user likes songs with high danceability and energy
+
+I think that maybe we could assign some weights to these songs since they are ranked so user
+listened to the songs at the top more to the ones at the bottom. That way they would be more representative
