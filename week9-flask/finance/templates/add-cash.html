@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <form action="/add-cash" method="post">
+      <div class="mb-4">
+        <label for="payment-method">Payment Method:</label>
+        <select id="payment-method" name="payment-method" required>
+          <option value="credit-card">Credit Card</option>
+          <option value="debit-card">Debit Card</option>
+          <option value="paypal">PayPal</option>
+        </select>
+      </div>
+
+        <div class="mb-4">
+          <label class="d-block" for="amount">Amount to Add:</label>
+          <input class="form-control mx-auto w-auto" name="amount" placeholder="$100" type="text">
+        </div>
+
+        <div class="mb-4">
+          <label class="d-block" for="card-number">Card Number:</label>
+          <input class="form-control mx-auto w-auto" type="number" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+        </div>
+
+        <div class="mb-4">
+          <label class="d-block" for="expiration-date">Expiration Date:</label>
+          <input class="form-control mx-auto w-auto" type="month" id="expiration-date" name="expiration-date" required>
+        </div>
+
+      <div class="mb-4">
+        <label class="d-block" for="cvv">CVV:</label>
+        <input class="form-control mx-auto w-auto" type="number" id="cvv" name="cvv" pattern="\d{3}" placeholder="123" required>
+      </div>
+
+
+        <button class="btn btn-primary" type="submit">Add Cash</button>
+    </form>
+{% endblock %}

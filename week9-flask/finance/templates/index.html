@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table class="table mb-4">
+      <thead>
+          <tr>
+              <th scope="col">Symbol</th>
+              <th scope="col">Shares</th>
+              <th scope="col">Price</th>
+              <th scope="col">Total</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for stock in portfolio %}
+          <tr>
+              <td>{{ stock.symbol }}</td>
+              <td>{{ stock.shares }}</td>
+              <td>{{ stock.price }}</td>
+              <td>{{ stock.total  }}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+  <h3 class="mb-2">Grand Total: {{ grandTotal }}</h3>
+  <h4>Cash: {{ cash }}</h4>
+{% endblock %}
